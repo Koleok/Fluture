@@ -2,12 +2,13 @@
   "name": "fluture",
   "version": "2.0.1",
   "description": "FantasyLand compliant (monadic) alternative to Promises",
-  "main": "fluture.js",
+  "main": "index.js",
   "repository": "https://github.com/Avaq/fluture.git",
   "scripts": {
     "check-security": "nsp check",
     "clean": "rimraf npm-debug.log coverage",
     "lint": "eslint fluture.js test",
+    "transpile": "babel ./fluture.js --out-file ./index.js",
     "post-merge": "npm install && npm dedupe && npm run check-security && npm outdated --long",
     "pre-push": "npm test",
     "setup": "npm run post-merge && cp scripts/hooks/* .git/hooks && git config push.followTags true",
@@ -53,6 +54,10 @@
     "inspect-f": "^1.1.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.5.0",
     "benchmark": "^2.1.0",
     "chai": "^3.4.0",
     "codecov": "^1.0.1",
